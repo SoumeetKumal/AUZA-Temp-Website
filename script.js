@@ -19,5 +19,31 @@ steps.forEach((step, i) => {
     detailNum.textContent = d.num;
     detailTitle.textContent = d.title;
     detailDesc.textContent = d.desc;
+
+    // Mobile - Scroll to detail card
+    if (window.innerWidth <= 768) {
+      document.getElementById('detail-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   });
 });
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuBtn.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+}

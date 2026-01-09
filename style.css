@@ -136,7 +136,9 @@
 
     .btn-primary:hover {
       background: #e8163f;
-      transform: translateY(-2px)
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(220, 20, 60, 0.4);
+      /* Enhanced glow */
     }
 
     .btn-secondary {
@@ -154,8 +156,55 @@
       display: flex;
       align-items: center;
       padding: 120px 48px 80px;
-      position: relative
+      position: relative;
+      overflow: hidden;
+      /* Ensure glow doesn't spill over */
     }
+
+    /* Ambient Glow */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(220, 20, 60, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
 
     .hero-inner {
       max-width: 1400px;

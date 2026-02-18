@@ -218,8 +218,12 @@
   <meta
     content="Strategic web design for ambitious businesses. WCAG 2.1 AA accessible, performance-optimized websites that drive measurable growth. Based in Mauritius, working globally."
     name="description" />
-  <!-- Favicon -->
-  <link href="images/AUZA Logo White.png" rel="icon" type="image/png" />
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="512x512" href="images/icon-512.png" />
+  <link rel="apple-touch-icon" href="images/icon-512.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0A0A0A" />
   <!-- Open Graph / Social Sharing -->
   <meta content="website" property="og:type" />
   <meta content="https://auza.mu/" property="og:url" />
@@ -234,7 +238,13 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "AUZA",
-    "image": "https://auza.mu/images/AUZA%20Logo%20White.png",
+    "image": "https://auza.mu/images/icon-512.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://auza.mu/images/icon-512.png",
+      "width": "512",
+      "height": "512"
+    },
     "description": "Functional, accessible web design and development for ambitious businesses.",
     "url": "https://auza.mu/",
     "telephone": "",
@@ -575,7 +585,7 @@
         </div>
       </div>
     </section>
-    <section class="section pricing-section" id="pricing">
+    <section class="section pricing-section" id="pricing" data-nosnippet>
       <div class="pricing-container">
         <!-- Section Header -->
         <div class="section-header" data-scroll="fade-up">

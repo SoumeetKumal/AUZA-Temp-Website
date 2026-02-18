@@ -260,7 +260,12 @@
 
 
 
-    <link rel="icon" type="image/png" href="images/AUZA Logo White.png">
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="512x512" href="images/icon-512.png" />
+    <link rel="apple-touch-icon" href="images/icon-512.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#0A0A0A" />
     <style>
         .services-hero h1 {
             font-weight: var(--header-weight);
@@ -300,7 +305,8 @@
             </div>
         </section>
 
-        <section class="comparison-section section" id="pricing-comparison" aria-labelledby="comparison-title">
+        <section class="comparison-section section" id="pricing-comparison" aria-labelledby="comparison-title"
+            data-nosnippet>
             <h2 id="comparison-title" class="sr-only">Service Packages Comparison Table</h2>
             <div class="scroll-hint-container fade-up" aria-hidden="true">
                 <div class="scroll-hint">
@@ -483,7 +489,7 @@
         </section>
 
         <!-- Detailed Inclusions -->
-        <section class="detailed-package-section">
+        <section class="detailed-package-section" data-nosnippet>
             <div class="package-grid">
 
                 <!-- Website Packages Category -->
